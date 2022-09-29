@@ -1,0 +1,1039 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 85%;
+}
+:root{
+   --negro-hea:rgb(31, 31, 31);
+   --botones:#2980b9;
+   --rojo:#e52e1a;
+   --naranja:#e6550d;
+   --negro:#333;
+   --blanco:#fff;
+   --blanco-bg:#f5f5f5;
+   --neg-claro:#666;
+   --bordes:.5px solid #000;
+   --sombras:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+
+
+/* PAGINACIÓN */
+.loader{
+    position: fixed;
+    top:0; left:0; right:0; bottom: 0;
+    background-color: var(--blanco);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .loader img{
+    width: 20rem;
+ }
+ /* FIN PAGINACIÓN */
+
+
+
+/* INICIO TITULOS, MENSAJE Y BOTONES */
+.titulo{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color:#000;
+    text-transform: uppercase;
+}
+.btn-salir,
+.btn-actualizar,
+.btn{
+    display: block;
+    width: 100%;
+    margin-top: 1.3rem;
+    border-radius: 1rem;
+    padding:1rem 2rem;
+    font-size: 1.5rem;
+    color:#fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+.btn{
+    background-color: #2980b9;
+}
+.btn-salir{
+    background-color: #e74c3c;
+}
+.btn-actualizar{
+    background-color: #f39c12;
+}
+.btn-salir:hover,
+.btn-actualizar:hover,
+.btn:hover{
+    background-color:#333;
+}
+.flex-btn{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap:1.5rem;
+}
+.mensaje{
+    position: relative;
+    top:10rem;
+    max-width: 500px;
+    margin:0 auto;
+    background-color: #fff;
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+    z-index: 10000;
+    border: var(--bordes);
+}
+.mensaje span{
+    font-size: 2rem;
+    color:#333;
+}
+.mensaje i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:#e74c3c;
+}
+.mensaje i:hover{
+    color:#333;
+}
+.vacio{
+    padding:1.5rem;
+    background: var(--blanco);
+    color:var(--rojo);
+    border-radius: .5rem;
+    border:var(--bordes);
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: var(--sombras);
+    text-transform: capitalize;
+}
+ /* FIN TITULOS, MENSAJE Y BOTONES */
+
+
+
+/* INICIO HEADER */
+.header{
+    position: fixed;
+    background-color: var(--negro-hea);
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    transition: .4s;
+}
+.header .container{
+    width: 100%;
+    max-width:1300px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 5px 15px;
+   
+}
+.header .container .logo img{
+    width: 100%;
+    height: 55px;
+}
+.header .container nav{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.header .container nav a{
+    padding: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+.header .container .iconos{
+    display: flex;
+}
+.header .container .iconos i{
+    font-size: 2em;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #fff;
+}
+.header .container .iconos i span{
+    font-size: 1.2rem;
+}
+.header .container nav a:hover,
+.header .container .iconos i:hover{
+    color: var(--naranja);
+}
+#btn-menu{
+    display: none;
+}
+.header .container .profile{
+    position: absolute;
+    top:120%; right:3rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding:1rem;
+    display: none;
+    width: 25rem;
+    border: var(--bordes);
+    box-shadow: var(--sombras);
+    transition: all 2s;
+}
+.header .container .profile.active{
+    display: inline-block;
+}
+.header .container .profile p{
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color:var(--negro);
+    text-align: center;
+}
+.header .container .profile p span{
+    font-size: 1.5rem;
+    color: var(--neg-claro);
+}
+/* FIN HEADER */
+
+
+
+/* INICIO CARRITO DE COMPRAS */
+.carrito{
+    position: fixed;
+    top:0; right:-110%;
+    width: 33rem;
+    z-index: 1100;
+    background-color: var(--botones);
+    height: 100vh;
+    overflow-y: scroll;
+    transition: all .5s;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+.carrito section{
+    margin-bottom: 7rem;
+}
+.carrito.active{
+    right: .5rem;
+    transition: all .5s;
+}
+.carrito #cerrar_carrito{
+    text-align: right;
+    margin-bottom: 2.5rem;
+}
+.carrito #cerrar_carrito span{
+    cursor: pointer;
+    font-size: 2rem;
+    color: chocolate;
+    text-decoration: underline;
+    padding-right: 1.5rem;
+}
+.carrito #cerrar_carrito span:hover{
+    color: #000;
+    transition: all .5s;
+}
+.carrito .box{
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap:1.5rem;
+    border-radius: 1rem;
+    padding:1.5rem;
+    background-color: var(--blanco);
+    margin:1.5rem .5rem;
+}
+.carrito .box .fa-times{
+    position: absolute;
+    top:1.6rem; right:1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: chocolate;
+}
+.carrito .box .fa-times:hover{
+    color: #000;
+}
+.carrito .box img{
+    width: 7rem;
+}
+.carrito .box .content p{
+    font-size: 1.6rem;
+    color: var(--naranja);
+}
+.carrito .box .content p span{
+    font-size: 1.4rem;
+    color: var(--negro);
+}
+.carrito .box .content form{
+    margin-top: 1.5rem;
+    display: flex;
+    gap:1rem;
+}
+.carrito .box .content form .cantidad{
+    border: .5px solid #000;
+    border-radius: 1rem;
+    padding:1rem;
+    font-size: 1.8rem;
+    color:var(--negro);
+    width: 8rem;
+}
+.carrito .box .content form .fa-edit{
+    width: 5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: rgb(246, 232, 232);
+    color: var(--negro);
+}
+.carrito .box .content form .fa-edit:hover{
+    background-color: var(--neg-claro);
+    color:var(--blanco);
+    transition: all .4s;
+}
+/* FIN CARRITO DE COMPRAS */
+
+
+/* INICIO ORDENES */
+.verificar{
+    margin: 7rem auto;
+}
+.verificar form{
+    max-width: 40rem;
+    margin:0 auto;
+    border:var(--bordes);
+    padding:2rem;
+}
+.verificar form h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding: 2rem 0;
+    color:var(--negro);
+}
+.verificar form .box-productos{
+    background-color: var(--negro);
+    padding:1.5rem;
+    padding-top: 0;
+}
+.verificar form .box-productos h3{
+    color:var(--blanco);
+    text-align: center;
+}
+.verificar form .box-productos p{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    justify-content: space-between;
+    margin:1rem 0;
+    line-height: 1.5;
+    font-size: 1.7rem;
+}
+.verificar form .box-productos p .nombre{
+    color:var(--neg-claro);
+}
+.verificar form .box-productos p .precio{
+    color:var(--naranja);
+}
+.verificar form .box-productos .grand-total{
+    background-color: var(--blanco);
+    padding:.5rem 1.5rem;
+}
+.verificar form .box-productos .grand-total .precio{
+    color:var(--rojo);
+}
+.verificar form .info-usuario p{ 
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding:.5rem 0;
+}
+.verificar form .info-usuario p i{
+    color:var(--negro);
+    margin-right: 1.5rem;
+}
+.verificar form .info-usuario p span{
+    color:var(--neg-claro);
+}
+.verificar form .info-usuario .box{
+    width: 100%;
+    border:var(--bordes);
+    padding:1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+/*  */
+
+
+/* CAMBIAR DIRECCIÓN */
+.form-container{
+    margin: 6rem auto;
+}
+.form-container form{
+    border:var(--bordes);
+    border-radius: 1rem;
+    margin:0 auto;
+    max-width: 50rem;
+    padding:2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.form-container form h3{
+    font-size: 2.5rem;
+    color:var(--negro);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.form-container form .box{
+    margin:.7rem 0;
+    width: 100%;
+    border:var(--bordes);
+    padding:1rem;
+    font-size: 1.8rem;
+    color:var(--negro);
+}
+.form-container form p{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color:var(--neg-claro);
+}
+.form-container form p a{
+    color:var(--negro);
+}
+.form-container form p a:hover{
+    text-decoration: underline;
+}
+/*  */
+
+
+
+/* INICIO SLIDER */
+.home .slider{
+        display: flex;
+        align-items: center;
+        margin-top: 5rem;
+        padding-bottom: 3rem;
+}
+.home .slider .image{
+        width: 100%;
+}
+.home .slider .image img{
+        width: 100%;
+        height: 40rem;
+}
+.swiper-button-next,
+.swiper-button-prev{
+        color:var(--blanco-bg   );
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #333;
+}
+/* FIN SLIDER */
+
+
+
+/* INICIO PROMOCIONES */
+.pmc{
+        background-color: #F4F4F4;
+        color: rgb(255, 255, 255);
+        text-align: center;
+}
+.pmc .promociones{
+            padding: 50px 12px;
+}
+.pmc .promociones .titulo{
+    font-size: 3.5rem;
+}
+.pmc .promociones .promo{
+    background-position: center center;
+    background-size: cover;
+    padding: 8rem 0;
+    margin: 4rem 14rem;
+    border-radius: 4rem;
+}
+.pmc .promociones .promo:hover{
+    box-shadow: 0px 0px 20px var(--negro);
+}
+.pmc .promociones .pmcju .promo .titulo_promo{
+    text-align: center;
+    color: var(--blanco);
+    font-size: 2rem;
+}
+.pmc .promociones .pmcju .promo .flex-btn{
+    width: 10rem;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.pmc .promociones .pmcju .promo .btn:hover{
+        background-color: var(--negro);
+}
+.promo:first-child{
+    background-image:url("../img/1.jpeg");
+}
+.promo:nth-child(2){
+        background-image: linear-gradient(
+            0deg, 
+            rgb(0, 0, 0, 0.16),
+            rgb(0, 0, 0, 0.16)
+        ) 
+        ,url("../img/2.jpeg");
+}
+.promo:nth-child(3){
+        background-image: linear-gradient(
+            0deg, 
+            rgb(0, 0, 0, 0.16),
+            rgb(0, 0, 0, 0.16)
+        ) 
+        ,url("../img/3.jpeg");
+}
+/* FIN PROMOCIONES */
+
+
+
+/* <<<<<<<< INICIO SECCIÓN PRODUCTOS >>>>> */
+.mostrar_productos{
+    padding-top: 6rem;
+}
+.mostrar_productos .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 22rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 4rem 5rem; 
+}
+.mostrar_productos .container .box{
+    padding:2rem;
+    text-align: center;
+    border-radius: .5rem;
+    border:var(--bordes);
+    background-color: var(--blanco);
+    box-shadow: var(--sombras);
+    position: relative;
+}
+.mostrar_productos .container .box:hover{
+    box-shadow: 0px 0px 20px var(--negro);
+}
+.mostrar_productos .container .box img{
+    width: 100%;
+    height: 17rem;
+}
+.mostrar_productos .container .box .precio{
+    position: absolute;
+    top:1rem; left:1rem;
+    border-radius: .5rem;
+    background-color: #f6f0e8;
+    color:var(--negro);
+    padding:.5rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.mostrar_productos .container .box .nombre{
+    margin:1rem 0;
+    font-size: 1.5rem;
+    color:#000; 
+}
+.mostrar_productos .container .box .flex-btn{
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+}
+.mostrar_productos .container .box .flex-btn .cantidad{
+    width: 8rem;
+   border:var(--bordes);
+   padding:1rem;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   font-size: 1.8rem;
+   color:var(--negro);
+}
+/* <<<<<<<< FIN SECCIÓN PRODUCTOS >>>>> */
+
+
+
+/* <<<<<<<< INICIO SECCIÓN CONTACTO >>>>> */
+.contacto{
+    margin:0 auto;
+    max-width: 1200px;
+    padding:2rem;
+    margin-top: 5rem;
+}
+.contacto .flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+.contacto .flex .image{
+    flex:1 1 30rem;
+}
+.contacto .flex .image img{
+    width: 100%;
+}
+.contacto .flex form{
+    border:var(--bordes);
+    flex:1 1 40rem;
+    padding:1.5rem;
+    text-align: center;
+}
+.contacto .flex form h3{
+    font-size: 2.5rem;
+    color:var(--negro);
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+.contacto .flex form .box{
+    margin:.7rem 0;
+    font-size: 1.8rem;
+    color:var(--negro);
+    border:var(--bordes);
+    padding:1rem;
+    width: 100%;
+}
+.contacto .flex form textarea{
+    height: 10rem;
+    resize: none;
+}
+/* <<<<<<<< FIN SECCIÓN CONTACTO >>>>>>*/
+
+
+
+/* <<<<<<<< INICIO SECCIÓN SERVICIO >>>>> */
+.title{
+    color: brown;
+    font-size: 60px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.main_title{
+    color: darkred;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: rgb(247, 158, 94);
+    border-radius: 45%;
+}
+.nuestros_servicios{
+    display: flex;
+    justify-content:space-evenly;
+    background-color:beige; 
+    padding: 30px;
+}
+.nuestros-servicios{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+.nuestros_servicios.TEXTO{
+    width: 48%;
+}
+.TEXTO h3{
+    margin-bottom: 20px;
+}
+.TEXTO h3 span{
+    background-color: chocolate;
+    color: white;
+    border-radius: 50%;
+    display:inline-block;
+    text-align: center;
+    width: 30px;
+    height: 35px;
+    padding: 2px;
+    font-size: 2rem;
+    box-shadow: 0 0 5px rgb(red, green, blue);
+}
+.TEXTO p{
+    padding: 5px 20px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+.imagen{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: block;
+    padding: 2rem;
+    background-color: cornsilk;
+}
+/* <<<<<<<< FIN SECCIÓN SERVICIO >>>>> */
+
+
+
+/* <<<<<<<< INICIO SECCIÓN EQUIPO >>>>> */
+.contenido_equipo{
+    max-width:1400px;
+    margin: auto;
+}
+.containerr_equipo{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding:100px 0;
+    height: auto;
+}
+.testimony{
+    background: #F4F4F4;
+}
+.testimony-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.testimony__card{
+    width: 30%;
+    height: 500px;
+    background: rgb(211, 194, 194);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.testimony__img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center top;
+}
+.testimony__copy{
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: linear-gradient(180deg, #666 0%, #000 100%);
+    color: var(--blanco);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: var(--sombras);
+    padding: 15px 8px;
+    display: flex;
+    align-items: center;
+}
+.testimony__logo{
+    font-size: 40px;
+    margin-right: 15px;
+    display: inline-block;
+}
+.testimony__name{
+    font-size: 24px;
+    line-height:28px;
+    color: var(--blanco);
+}
+.testimony__position{
+    color: var(--blanco);
+}
+.testimony__text{
+    padding: 40px 0;
+    width: 90%;
+    margin: 0 auto;
+    color: #000;
+}
+.testimony__history{
+    font-size: 21px;
+    font-weight: 300;
+}
+.testimony__info{
+    width: 70%;
+}
+.logo--picture{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center top;
+}
+/* <<<<<<<< FIN SECCIÓN EQUIPO >>>>> */
+
+
+
+/* <<<<<<<< INICIO SECCIÓN NOSOTROS >>>>> */
+.contenido_nosotros{
+    padding-top: 1.4rem;
+}
+.nosotros {
+    padding-bottom: 75px;
+    padding-top: 75px;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    right: auto;
+}
+.nosotros img {
+    width: 250px;
+    right: 250px;
+    align-items: center;
+    margin: 0 auto;
+    display: inline-block;
+    background-size: contain;
+}
+.nosotros .cont{
+    text-align: center;
+    padding: 35px;
+    margin: auto;
+}
+.nosotros .titulo{
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    color:rgb(214, 47, 47);
+}
+/* <<<<<<<< FIN SECCIÓN NOSOTROS >>>>> */
+
+
+
+/* INICIO FOOTER */
+footer{
+    width: 100%;
+    background-color: rgb(31, 31, 31);
+}
+.piepag .gr1{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:40px;
+    padding: 35px 30px;
+}
+.piepag .gr1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.piepag .gr1 .box figure img{
+    width: 100%;
+    height: 20rem;
+    border-radius: 50%;
+}
+.piepag .gr1 .box h2{
+    color: rgba(255, 255, 255, 0.932);
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+.piepag .gr1 .box p{
+    color: #efefefea;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+.piepag .gr1 .red-social{
+    display: grid;
+}
+.piepag .gr1 .red-social a{
+    display: flex;
+    width: 100%;
+    line-height: 45px;
+    color: #fff;
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    transition: all 300ms ease;
+}
+.piepag .gr1 .red-social a span{
+    padding-left: 1.5rem;
+}
+.piepag .gr1 .red-social a:hover{
+    color: rgb(214, 47, 47);
+}
+.piepag .gr2{
+    background-color: #636363;
+    padding: 10px 5px;
+    text-align: center;
+    color: #fff;
+}
+.piepag .gr2 small{
+    font-size: 15px;
+}
+/* FIN FOOTER */
+
+
+/* RESPONSIVE */
+@media (max-width:1030px){
+
+    html{
+       font-size: 65%;
+    }
+    .pmc .promociones .pmcju .promo{
+        padding: 9rem 2rem;
+        border-radius: 3rem;
+        margin: 5% 10%;
+    }
+    .pmc .promociones .pmcju .promo .titulo{
+        font-size: 2.5rem;
+        padding: .5rem 0;
+    }
+    .mostrar_productos{
+        margin-top: 2rem;
+    }
+    .form-container{
+        margin-top: 8rem;
+    }
+    .testimony-container{
+        justify-content: space-evenly;
+    }
+    .testimony__card{
+        width: 45%;
+    }
+    .nuestros-servicios{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nuestros_servicios .TEXTO{
+        width: 90%;
+    }
+    .imagen{
+        width: 40%;
+        height: 40%;
+    }
+    .imagen1{
+        width: 40%;
+        height: 40%;
+    }
+}
+ 
+@media (max-width:770px){
+    
+    #btn-menu{
+       display: inline-block;
+    }
+    .header .container nav{
+       position: absolute;
+       top:99%; left:0; right:0;
+       width: 100%;
+       height: calc(100%-80px);
+       display: grid;
+       background-color: rgb(35, 35, 35);
+       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+       overflow-y: auto;
+       transition: all .1s;
+    }
+    .header .container nav.active{
+       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .container nav a{
+       display: block;
+       margin: 15px 0;
+       align-items: center;
+       text-align: center;
+    }
+
+    .home .slider{
+        margin-top: 6.4rem;
+    }
+    .pmc .promociones .titulo{
+        font-size: 2.5rem;
+    }
+    .pmc .promociones .pmcju .promo{
+        padding: 6rem 2rem;
+        border-radius: 3rem;
+        font-size: 1.7rem;
+        margin: 10% 10%;
+    }
+    .pmc .promociones .pmcju .promo .titulo{
+        font-size: 1.5rem;
+        padding: .5rem 0;
+    }
+
+    .mostrar_productos{
+        margin-top: 3rem;
+    }
+    .form-container{
+        margin: 3rem 1.5rem;
+        margin-top: 8rem;
+
+    }
+    .piepag .gr1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:40px;
+        padding: 35px 30px;
+    }
+    .piepag .gr1 .red-social a{
+        line-height: 3rem;
+    }
+
+    .testimony__card{
+        width: 65%;
+    }
+    .testimony__name{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:450px){
+ 
+    html{
+       font-size: 50%;
+    }
+    .home .slider{
+        margin-top: 8.3rem;
+    }
+
+    .pmc .promociones .pmcju .promo{
+        padding: 4rem 1.5rem;
+        border-radius: 3rem;
+        font-size: 1.5rem;
+        margin: 6% 10%;
+    }
+    .mostrar_productos{
+        margin-top: 4rem;
+    }
+    .verificar,
+    .form-container{
+        margin: 3rem 1rem;
+        margin-top:10rem;
+    }
+
+    .testimony__card{
+        width: 95%;
+    }
+    .testimony__history{
+        font-size: 20px;
+    }
+    .nosotros img {
+        width: 125px;
+        right: 125px;
+    }
+
+    .nuestros_servicios{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nuestros_servicios .TEXTO{
+        width: 90%;
+    }
+    .imagen{
+        width: 90%;
+        height: 90%;
+    }
+    .TEXTO p{
+        font-size: 20px;
+    }
+    .TEXTO h3 {
+        font-size: 3rem;
+    }
+    .TEXTO h3 span{
+        font-size: 3rem;
+    }
+ }

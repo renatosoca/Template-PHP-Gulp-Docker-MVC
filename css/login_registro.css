@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: url(../img/pizza\ fondo.webp);
+    background-size: cover;
+    background-attachment: fixed;
+}
+html{
+    font: 85%;
+}
+/* INICIO }BOTONES */
+.btn-salir,
+.btn-actualizar,
+.btn{
+   display: block;
+   width: 100%;
+   margin-top: 1.3rem;
+   border-radius: 1rem;
+   padding:1rem 2rem;
+   font-size: 1.5rem;
+   color:#fff;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+   border: none;
+}
+.btn{
+   background-color: #2980b9;
+}
+.btn-salir{
+   background-color: #e74c3c;
+}
+.btn-actualizar{
+   background-color: #f39c12;
+}
+.btn-salir:hover,
+.btn-actualizar:hover,
+.btn:hover{
+   background-color:#333;
+}
+.flex-btn{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   gap:1.5rem;
+}
+.mensaje{
+    position: sticky;
+    top:0;
+    max-width: 1200px;
+    margin:0 auto;
+    background-color: #fff;
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+    z-index: 10000;
+}
+.mensaje span{
+    font-size: 2rem;
+    color:#333;
+}
+.mensaje i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:#e74c3c;
+}
+.mensaje i:hover{
+    color:#333;
+}
+/* FIN MENSAJE */
+
+/* PAGINACIÓN */
+.loader{
+    position: fixed;
+    top:0; left:0; right:0; bottom: 0;
+    background-color: var(--blanco);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader img{
+    width: 20rem;
+}
+ /* FIN PAGINACIÓN */
+
+
+
+/* INICIO SECCIÓN REGISTRO */
+.flex{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.formulario{
+    background: #2d7aaeec;
+    padding: .8rem;
+    border-radius: 1rem;
+    margin: 3rem 2rem;
+    
+}
+.formulario .container{
+    width: 100%;
+    padding: .3rem;
+}
+.formulario .container h1{
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+}
+.formulario .container .input-container{
+    border-radius: .4rem;
+    background: #fff;
+    border: 1px solid #aaa;
+    margin: 0 .5rem .8rem .5rem;
+}
+.formulario .container input{
+    font-size: 1.1rem;
+    width: 80%;
+    padding: .7rem;
+    border: none;
+}
+.formulario .container .icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.formulario .container p{
+    text-align: center;
+}
+.formulario .container .link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.formulario .container .link:hover{
+     color: #000000;
+}
+/* FIN SECCIÓN REGISTRO */
+
+
+
+/* INICIO SECCIÓN LOGIN */
+.container_login{
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+}
+.formulario_sesion{
+    width: 30rem;
+    background: #318cc9ec;
+    margin:11rem 2rem;
+    border-radius: 1rem;
+}
+.formulario_sesion .titulo{
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+}
+.formulario_sesion .container{
+    width: 100%;
+    padding: 15px;
+}
+.formulario_sesion .container .input-container{
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #aaa;
+}
+.formulario_sesion .container .input-container input{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.formulario_sesion .container .input-container .icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.formulario_sesion .container p{
+    text-align: center;
+}
+.formulario_sesion .container .link{
+    text-decoration: none;
+      color: #fff;
+    font-weight: 600;
+}
+.formulario_sesion .container .link:hover{
+     color: #000000;
+}
+/* FIN SECCIÓN LOGIN */
+
+
+
+
+@media (max-width:991px){
+
+    html{
+       font-size: 85%;
+       transition: all .6s;
+    }
+}
+@media (max-width:701px){
+
+    html{
+       font-size: 70%;
+       transition: all .6s;
+    }
+    .formulario_sesion .titulo{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 60%;
+    }
+    .formulario_sesion{
+        width: 95%;
+    }
+    
+    .formulario_sesion .titulo{
+        text-align: center;
+        font-size: 25px;
+    }
+    .formulario_sesion .container{
+        width: 100%;
+    }
+    .formulario_sesion .container .input-container .icon{
+        min-width: 10px;
+        text-align: right;
+        color: #999;
+    }
+    .formulario_sesion .container .input-container input{
+        font-size: 15px;
+        width: 90%;
+        padding: 10px;
+        border: none;
+    }
+    .flex-btn{
+        flex-direction: column;
+        align-items:center;
+        width: auto;
+     }
+     
+    /* Registro */
+    .formulario{
+        width: 100%;
+        text-align: center;
+        font-size: 90%;
+    }
+    .formulario .container input{
+        font-size: 15px;
+        width: 80%;
+        padding: .7rem;
+        border: none;
+    }
+    .formulario .container .icon{
+        min-width: 10px;
+        text-align: center;
+        color: #999;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

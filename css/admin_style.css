@@ -1,0 +1,641 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 75%;
+}
+:root{
+   --botones:#2980b9;
+   --rojo:#e74c3c;
+   --naranja:#f39c12;
+   --negro:#333;
+   --blanco:#fff;
+   --blanco-bg:#f5f5f5;
+   --neg-claro:#666;
+   --bordes:.1rem solid var(--neg-claro);
+   --sombras:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+/* TITULOS, MENSAJE Y BOTONES */
+.titulo{
+   text-align: center;
+   margin-bottom: 2rem;
+   font-size: 2rem;
+   color:#000;
+   text-transform: uppercase;
+}
+.btn-salir,
+.btn-actualizar,
+.btn{
+   display: block;
+   width: 100%;
+   margin-top: 1.3rem;
+   border-radius: 1rem;
+   padding:1rem 2rem;
+   font-size: 1.5rem;
+   color:#fff;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+}
+.btn{
+   background-color: #2980b9;
+}
+.btn-salir{
+   background-color: #e74c3c;
+}
+.btn-actualizar{
+   background-color: #f39c12;
+}
+.btn-salir:hover,
+.btn-actualizar:hover,
+.btn:hover{
+   background-color:#333;
+}
+.flex-btn{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   gap:1.5rem;
+}
+.mensaje{
+   position: sticky;
+   top:0;
+   max-width: 1200px;
+   margin:0 auto;
+   background-color: #fff;
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap:1.5rem;
+   z-index: 10000;
+}
+.mensaje span{
+   font-size: 2rem;
+   color:#333;
+}
+.mensaje i{
+   font-size: 2.5rem;
+   cursor: pointer;
+   color:#e74c3c;
+}
+.mensaje i:hover{
+   color:#333;
+}
+.vacio{
+   padding:1.5rem;
+   background: var(--blanco);
+   color:var(--rojo);
+   border-radius: .5rem;
+   border:var(--bordes);
+   font-size: 1.5rem;
+   text-align: center;
+   box-shadow: var(--sombras);
+   text-transform: capitalize;
+}
+/* FIN BOTONES */
+
+
+
+/* PARA EL LOGIN */
+.container_login{
+    background-color:var(--blanco-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_login form{
+    text-align: center;
+    padding:2rem;
+    border-radius: 3rem;
+    box-shadow: var(--sombras);
+    width: 40rem;
+    background-color: var(--botones);
+    border: .2rem solid black;
+}
+.container_login form img{
+   width: 20rem;
+   height: 10rem;
+}
+.container_login form h3{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--blanco);
+}
+.container_login form .box{
+    width: 90%;
+    height: 5rem;
+    border-radius: 1rem;
+    background-color: var(--blanco-bg);
+    padding:1.4rem;
+    margin:1rem auto;
+    font-size: 1.5rem;
+    color: var(--negro);
+    border: var(--bordes) ;
+}
+.container_login form .btn{
+   width: 80%;
+   background-color: #1331c7;
+}
+.container_login form .btn:hover{
+   background-color: var(--neg-claro);
+}
+/* FIN LOGIN */
+
+
+/* INICIO DEL HEADER */
+.header{
+    position: sticky;
+    background-color: rgb(31, 31, 31);
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    transition: all 1s;
+}
+.header .container{
+    width: 100%;
+    max-width:1300px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+.header .container .logo img{
+    width: 100%;
+    height: 60px;
+}
+.header .container nav{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.header .container nav a{
+    padding: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #fff;
+}
+.header .container .iconos{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.header .container .iconos div{
+    font-size: 2.5rem;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #fff;
+}
+.header .container nav a:hover,
+.header .container .iconos div:hover{
+    color: #e6550d;
+}
+#btn-menu{
+    display: none;
+}
+.header .container .profile{
+    position: absolute;
+    top:120%; right:3rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding:1rem;
+    display: none;
+    width: 25rem;
+    border: var(--bordes);
+    box-shadow: var(--sombras);
+    transition: all 2s;
+ }
+.header .container .profile.active{
+    display: inline-block;
+ }
+.header .container .profile p{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color:var(--negro);
+    text-align: center;
+ }
+.header .container .profile p span{
+   color: var(--neg-claro);
+ }
+/* FIN HEADER */
+
+
+/* INICIO DASHBOARD */
+.dashboard{
+   padding-top: 1.5rem;
+}
+.dashboard .container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap:2.4rem;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 0 15rem 7.5rem 15rem;
+}
+.dashboard .container .box{
+   padding:2rem;
+   text-align: center;
+   border-radius: .5rem;
+   border:.15rem solid #666;
+   background-color: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.dashboard .container .box p{
+   margin:1rem 0;
+   background-color: #f5f5f5;
+   border-radius: .5rem;
+   color:#666;
+   font-size: 1.5rem;
+   padding:1rem;
+   border:.1rem solid #666;
+}
+.dashboard .container .box h3{
+   font-size: 2rem;
+   color:#111;
+}
+/* FIN DASHBOARD */
+
+
+
+/* Sección AGREGAR, MOSTRAR Y MODIFICAR PRODUCTOS */
+.agre_productos,
+.mostrar_productos,
+.modif_productos{
+   padding-top: 1.5rem;
+}
+.agre_productos form{
+   max-width: 25rem;
+   margin:0 auto;
+   background-color: var(--blanco);
+   border-radius: 1rem;
+   box-shadow: 0 .8rem 1rem rgba(0,0,0,.1);
+   padding:1.5rem;
+   border:.15rem solid #666;
+   padding-top: 2rem;
+}
+.agre_productos form .box{
+   width: 100%;
+   padding:1rem;
+   font-size: 1.1rem;
+   color:var(--negro);
+   border-radius: .5rem;
+   border:var(--bordes);
+   background-color: var(--blanco-bg);
+   margin:.5rem 0;
+}
+
+.mostrar_productos .container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 23rem);
+   gap:2.5rem;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 4rem 10rem; 
+}
+.mostrar_productos .container .box{
+   padding:2rem;
+   text-align: center;
+   border-radius: .5rem;
+   border:var(--bordes);
+   background-color: var(--blanco);
+   box-shadow: var(--sombras);
+   position: relative;
+}
+.mostrar_productos .container .box img{
+   width: 100%;
+   height: 17rem;
+}
+.mostrar_productos .container .box .precio{
+   position: absolute;
+   top:1rem; left:1rem;
+   border-radius: .5rem;
+   background-color: #f6f0e8;
+   color:var(--negro);
+   padding:.5rem 1.5rem;
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+.mostrar_productos .container .box .nombre{
+   margin:1rem 0;
+   font-size: 1.5rem;
+   color:#000; 
+}
+
+.modif_productos form{
+   max-width: 35rem;
+   margin:4rem auto; 
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: var(--blanco);
+   border-radius: .5rem;
+   box-shadow: var(--sombras);
+   padding:2rem;
+   border:var(--bordes);
+   padding-top: 1rem;
+}
+.modif_productos form .box{
+   width: 80%;
+   padding:1rem;
+   font-size: 1.2rem;
+   color:var(--negro);
+   border-radius: .5rem;
+   border:var(--bordes);
+   background-color: var(--blanco-bg);
+   margin:.5rem auto;
+}
+.modif_productos form img{
+   width: 100%;
+   height: 20rem;
+}
+.modif_productos form .flex-btn{
+   padding: 0 10rem;
+}
+.modif_productos form .flex-btn .btn{
+   border: none;
+}
+/* FIN MODIFICAR PRODUCTO */
+
+
+/* INICIO ORDENES */
+.ordenes{
+   padding-top: 1.5rem;
+}
+.ordenes .container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 35rem);
+   gap:1.5rem;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 4rem 7rem;
+}
+.ordenes .container .box{
+   padding:2rem;
+   padding-top: 1rem;
+   border-radius: .5rem;
+   border:var(--bordes);
+   background-color: var(--blanco);
+   box-shadow: var(--sombras);
+}
+.ordenes .container .box p{
+   line-height: 1.5;
+   font-size: 2rem;
+   color:var(--neg-claro);
+   margin:1rem 0;
+}
+.ordenes .container .box p span{
+   color:var(--botones);
+}
+.ordenes .container .select{
+   margin-bottom: .5rem;
+   width: 100%;
+   background-color: var(--blanco-bg);
+   padding:1rem;
+   font-size: 1.8rem;
+   color:var(--negro);
+   border-radius: .5rem;
+   border:var(--bordes);
+}
+/* FIN ORDENES */
+
+
+/* SECCIÓN USUARIOS */
+.cuenta_usuarios{
+   padding-top: 1.5rem;
+}
+.cuenta_usuarios .container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 27rem);
+   gap:2.5rem;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 4rem 10rem;
+}
+.cuenta_usuarios .container .box{
+   padding:2rem;
+   padding-top: 1rem;
+   border-radius: .5rem;
+   text-align: center;
+   border:var(--bordes);
+   background-color: var(--blanco);
+   box-shadow: var(--sombras);
+}
+.cuenta_usuarios .container .box p{
+   font-size: 1.2rem;
+   color:var(--neg-claro);
+   margin: .5rem 0;
+}
+.cuenta_usuarios .container .box p span{
+   color:var(--botones);
+}
+/* FIN USUARIOS */
+
+
+
+/* INICIO CUENTAS ADMINS */
+.cuentas-admin{
+   padding-top: 1.5rem;
+}
+.cuentas-admin .box-registro{
+   margin: 0 auto;
+   width: 25rem;
+   text-align: center;
+   font-size: 1.5rem;
+   border-radius: .5rem;
+   border: var(--bordes);
+   box-shadow: var(--sombras);
+   padding: 1rem;
+
+}
+.cuentas-admin .container{
+   display: grid;
+   margin: 4rem 8rem;
+   grid-template-columns: repeat(auto-fit, 25rem);
+   gap: 2.5rem;
+   align-items: flex-start;
+   justify-content: center;
+}
+.cuentas-admin .container .box{
+   padding:2rem;
+   padding-top: 1rem;
+   border-radius: .5rem;
+   text-align: center;
+   border:var(--bordes);
+   background-color: var(--blanco);
+   box-shadow: var(--sombras);
+}
+.cuentas-admin .container .box p{
+   font-size: 1.3rem;
+   color:var(--negro);
+   margin: .5rem 0;
+}
+.cuentas-admin .container .box p span{
+   color:var(--neg-claro);
+}
+.cuentas-admin .container .btn-salir,
+.cuentas-admin .container .btn-actualizar{
+   font-size: 1.3rem;
+}
+/* FIN DE CUENTAS ADMINS */
+
+
+/* INICIO EDITAR PERFIL Y REGISTRAR */
+.editar_perfil_admin,
+.regis_admin{
+   min-height: 60vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 3.4rem 0;
+   margin-bottom: 5rem;
+
+}
+.editar_perfil_admin form,
+.regis_admin form{
+   width: 45rem;
+   padding:2rem;
+   border-radius: .5rem;
+   box-shadow: var(--sombras);
+   background-color: var(--blanco);
+   border:var(--bordes);
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   font-size: 60%;
+}
+.editar_perfil_admin form .box,
+.regis_admin form .box{
+   width: 55%;
+   border-radius: .5rem;
+   background-color: var(--blanco-bg);
+   padding:.3rem;
+   margin:1rem auto;
+   font-size: 1.8rem;
+   color:var(--negro);
+   border:var(--bordes);
+}
+.editar_perfil_admin form .flex-btn,
+.regis_admin form .flex-btn{
+   padding: 0 10rem;
+}
+.editar_perfil_admin form .flex-btn .btn,
+.regis_admin form .flex-btn .btn{
+   border: none;
+}
+/* FIN EDITAR Y REGISTRAR PERFIL */
+
+
+/* INICIO FOOTER */
+footer{
+   width: 100%;
+   background-color: rgb(31, 31, 31);
+   margin-bottom: 0rem;
+}
+.piepag .gr2{
+   padding: 10px 5px;
+   text-align: center;
+   color: #fff;
+}
+.piepag .gr2 small{
+   font-size: 1.5rem;
+}
+/* FIN FOOTER */
+
+
+ /* RESPONSIVE */
+ @media (max-width:991px){
+
+   html{
+       font-size: 73%;
+   }
+
+ }
+ 
+@media (max-width:780px){
+   
+   html{
+      font-size: 70%;
+   }
+   #btn-menu{
+       display: inline-block;
+   }
+   
+   .header .container nav{
+      position: absolute;
+      top:99%; left:0; right:0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      background-color: rgb(35, 35, 35);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      overflow-y: auto;
+      transition: all .5s;
+   }
+   .header .container nav.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+   .header .container nav a{
+      display: block;
+      margin: 15px 0;
+      align-items: center;
+      text-align: center;
+   }
+
+   .container_login form{
+      width: 65%;
+   }
+}
+ 
+ @media (max-width:450px){
+ 
+    html{
+       font-size: 60%;
+    }
+ 
+    .titulo{
+       font-size: 1.2rem;
+    }
+ 
+    .flex-btn{
+       flex-flow: column;
+       gap:0;
+    }
+ 
+    .dashboard .container{
+       grid-template-columns: 1fr;
+    }
+ 
+    .mostrar_productos .container{
+       grid-template-columns: 1fr;
+    }
+ 
+    .ordenes .container{
+       grid-template-columns: 1fr;
+    }
+ 
+    .cuentas-admin .container{
+       grid-template-columns: 1fr;
+    }
+ 
+ }
