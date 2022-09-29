@@ -7,16 +7,17 @@ Demo: https://leoncioprado-1b.tk/
 
 
 //Este es un usuario ya creado para los testing, pero te puedes registrar y tendras un usuario propio.
-   Usuario: rena@gmail.com
-   contra: 111
+      Usuario: rena@gmail.com
+      contra: 111
 
 
 //Este es para el adminitrador:
-  UsuarioAdmin: AdminRenato
-  contra	: 123
+      UsuarioAdmin: AdminRenato
+      contra	: 123
 
 
 Tecnologías utilizadas:
+
  - HTML5
  - CSS3
  - JavaScript
