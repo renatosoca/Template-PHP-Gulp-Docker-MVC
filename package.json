@@ -1,0 +1,18 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Proyecto de Ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwind -i ./src/css/styles.css -o ./public/build/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatosoca/E-commerce_Pizzeria.git"
+  },
+  "author": "Renato Soca",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
