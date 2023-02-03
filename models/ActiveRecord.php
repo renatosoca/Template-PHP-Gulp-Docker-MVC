@@ -1,18 +1,18 @@
 <?php
-  namespace Model;
+  namespace Models;
 
   class ActiveRecord {
     //Variables
     protected static $database;
-    protected static $table = '';
-    protected static $columns = [];
-    protected static $alerts = [];
+    protected static string $table = '';
+    protected static array $columns = [];
+    protected static array $alerts = [];
 
     //Funciones
     public static function setDataBase( $DataBase ): void {
       self::$database = $DataBase;
     }
-    public static function setAlert( $type, $message ): void {
+    public static function setAlert( string $type, string $message ): void {
       static::$alerts[$type][] = $message;
     }
     public static function getAlert(): array {
@@ -29,12 +29,12 @@
       $result = self::consultSQL( $query );
       return $result;
     }
-    public static function findById( $id ): array {
+    public static function findById( int $id ): array {
       $query = "SELECT * FROM ". static::$table . " WHERE id = {$id} LIMIT 1";
       $result = self::consultSQL( $query );
       return array_shift( $result );
     }
-    public static function findOne( $column, $value ): array {
+    public static function findOne( string $column, string $value ): array {
       $query = "SELECT * FROM ". static::$table . " WHERE {$column} = '{$value}' LIMIT 1 ";
       $result = self::consultSQL( $query );
       return array_shift( $result );
@@ -49,17 +49,17 @@
       $resultado = self::consultSQL( $query) ;
       return $resultado;
     }
-    public static function findOrderBy( $column, $order ): array {
+    public static function findOrderBy( string $column, string $order ): array {
       $query = "SELECT * FROM ". static::$table ." ORDER BY {$column} {$order}";
       $resultado = self::consultSQL( $query );
       return  $resultado;
     }
-    public static function findOrderLimit( $column, $order, $limit ) {
+    public static function findOrderLimit( string $column, string $order, $limit ) {
       $query = "SELECT * FROM ". static::$table ." ORDER BY {$column} {$order} LIMIT {$limit}";
       $resultado = self::consultSQL($query);
       return  $resultado;
     }
-    public static function findOneMore( $data = [] ): array {
+    public static function findOneMore( array $data = [] ): array {
       $query = "SELECT * FROM ". static::$table ." WHERE ";
       foreach ($data as $key => $value) {
         if ($key === array_key_last( $data )) {
@@ -71,7 +71,7 @@
       $resultado = self::consultSQL($query);
       return  $resultado  ;
     }
-    public static function findTotal( $column = '', $value = '' ): array {
+    public static function findTotal( string $column = '', string $value = '' ): array {
       $query = "SELECT COUNT(*) FROM ". static::$table;
       if($column) {
         $query .= " WHERE {$column} = {$value}";
@@ -81,7 +81,7 @@
 
       return array_shift($total);
     }
-    public static function findTotalMore( $data = [] ) {
+    public static function findTotalMore(array $data = [] ) {
       $query = "SELECT COUNT(*) FROM ". static::$table ." WHERE";
       foreach ($data as $key => $value) {
         if ($key === array_key_last( $data )) {
@@ -95,7 +95,7 @@
       return array_shift($total);
     }
     //Insertar en la Base de Datos
-    public static function consultSQL( $query ): array {
+    public static function consultSQL( string $query ): array {
       $result = self::$database->query( $query );
 
       $container = [];
@@ -105,7 +105,7 @@
       $result->free();
       return $container;
     }
-    public static function createObjects( $register ): object {
+    public static function createObjects( array $register ): object {
       $object = new static;
       foreach ($register as $key => $value) {
         if ( property_exists( $object, $key ) ) {
@@ -174,7 +174,7 @@
       }
       return $sanitized;
     }
-    public function synchronize( $args = [] ): void {
+    public function synchronize( array $args = [] ): void {
       foreach ($args as $key => $value) {
         if (property_exists( $this, $key) && !is_null( $value) ) {
           $this->$key = $value;
