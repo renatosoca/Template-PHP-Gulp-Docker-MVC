@@ -1,8 +1,15 @@
 <?php
+  use Models\ActiveRecord;
+  use Dotenv\Dotenv;
 
-  require 'Funciones.php';
-  require 'DataBase.php';
+  require 'Functions.php';
+  require 'Connection.php';
   require __DIR__.'/../vendor/autoload.php';
 
-  use Models\ActiveRecord;
-  ActiveRecord::setDataBase( $DataBase );
+  $dotenv = Dotenv::createImmutable(__DIR__);
+  $dotenv->safeLoad();
+
+  $connect = new Connection();
+  $connect = $connect->connect();
+
+  ActiveRecord::setDataBase( $connect );

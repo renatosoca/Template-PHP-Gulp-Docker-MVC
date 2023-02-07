@@ -9,6 +9,7 @@
 
   //Paginas Publicas
   $router->get( '/', [ PageController::class, 'index' ] );
+  $router->post( '/', [ PageController::class, 'index' ] );
   $router->get( '/404', [ PageController::class, 'NotFound' ] );
 
   $router->checkRoutes();

@@ -1,3 +1,3 @@
 <main>
-  <h1>Pagina Principal</h1>
+  <h1>Index</h1>
 </main>
