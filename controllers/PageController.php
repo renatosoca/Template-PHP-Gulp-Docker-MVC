@@ -18,7 +18,23 @@ use Router\Router;
       ]);
     }
 
-    public static function NotFound() {
+    public static function store() {
+      echo 'Store';
+    }
+
+    public static function ShoppingCart() {
+      echo 'ShoppingCart';
+    }
+
+    public static function about() {
+      echo 'About';
+    }
+
+    public static function contact() {
+      echo 'Contact';
+    }
+
+    public static function error() {
       echo 'Pagina no Encontrada';
     }
   }
