@@ -9,6 +9,8 @@
     protected static array $columnsDB = [];
     protected static array $alerts = [];
 
+    protected static string $id;
+
     //Funciones
     public static function setDataBase( $DataBase ): void {
       self::$database = $DataBase;
@@ -61,7 +63,7 @@
       $resultado = self::Prepare($query);
       return  $resultado;
     }
-    public static function findOneMore( array $data = [] ): array {
+    public static function findInnerJoins( array $data = [] ): array {
       $query = "SELECT * FROM ". static::$table ." WHERE ";
       foreach ($data as $key => $value) {
         if ($key === array_key_last( $data )) {

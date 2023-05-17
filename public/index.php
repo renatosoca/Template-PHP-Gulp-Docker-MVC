@@ -2,15 +2,15 @@
 
   require_once __DIR__.'/../includes/App.php';
 
-use Controllers\ApiLoginController;
-use Router\Router;
+  use Controllers\ApiLoginController;
+  use Router\Router;
   use Controllers\PageController;
 
   $router = new Router();
 
   //APIs
-  $router->get('/api/authentication/login', [ApiLoginController::class, 'login']);
-  $router->get('/api/authentication/register', [ApiLoginController::class, 'register']);
+  $router->get('/api/v1/auth/login', [ApiLoginController::class, 'login']);
+  $router->get('/api/v1/auth/register', [ApiLoginController::class, 'register']);
 
   //Paginas Publicas
   $router->get( '/', [ PageController::class, 'index' ] );
