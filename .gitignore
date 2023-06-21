@@ -1,3 +1,5 @@
 /node_modules/
 /vendor/
-/public/build/
+/docker
+
+.env

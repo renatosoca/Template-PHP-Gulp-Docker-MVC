@@ -1,14 +1,14 @@
 {
-  "name": "ecommerce",
+  "name": "template",
   "version": "1.0.0",
-  "description": "Proyecto de Ecommerce",
+  "description": "Template PHP",
   "main": "index.js",
   "scripts": {
     "dev": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renatosoca/E-commerce_Pizzeria.git"
+    "url": "git+https://github.com/renatosoca/Template-MVC_PHP.git"
   },
   "author": "Renato Soca",
   "license": "ISC",

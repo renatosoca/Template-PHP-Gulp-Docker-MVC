@@ -1,22 +1,26 @@
 <?php
 
-  require_once __DIR__.'/../includes/App.php';
+require_once __DIR__.'/../app/core/Main.php';
 
-  use Controllers\ApiLoginController;
-  use Router\Router;
-  use Controllers\PageController;
+use App\Core\Router;
+use App\Controllers\UserController;
 
-  $router = new Router();
+Router::get( '/', [ UserController::class, 'index' ] );
+Router::get( '/register/:token', [ UserController::class, 'register' ] );
+Router::get( '/function', function() {
+  echo 'function';
+});
+Router::get( '/function/:id', function( string $id = '') {
+  echo $id;
+  echo ' -- function';
+});
+Router::get('/api/v1/users', function() {
+  return [
+    'name' => 'example',
+    'lastname' => 'example lastname'
+  ];
+});
 
-  //APIs
-  $router->get('/api/v1/auth/login', [ApiLoginController::class, 'login']);
-  $router->get('/api/v1/auth/register', [ApiLoginController::class, 'register']);
+Router::dispatch();
 
-  //Paginas Publicas
-  $router->get( '/', [ PageController::class, 'index' ] );
-  $router->get( '/nosotros', [ PageController::class, 'about' ] );
-  $router->get( '/tienda', [ PageController::class, 'store' ] );
-  $router->get( '/404', [ PageController::class, 'error' ] );
-
-  $router->checkRoutes();
 ?>
